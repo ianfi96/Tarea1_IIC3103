@@ -2,7 +2,7 @@
   <div class="card-content">
     <div class="media">
       <figure class="image is-256x256">
-          <img class='is-rounded' src=<%= @character_info["image"] %> alt="Placeholder image">
+          <%=image_tag("#{@character_info["img"]}", :size=> "256x256") %>
       </figure>
     </div>
   </div>
