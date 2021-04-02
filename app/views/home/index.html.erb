@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<div class="container">
+  Breaking Bad
+  <%= form_tag("/season", method: "get") do %>
+    <%= label_tag(:season, "Temporadas: ") %>
+    <%= hidden_field_tag :series, "Breaking Bad"%>
+    <%= select_tag(:season, options_for_select(@bb_seasons)) %>
+    <%= submit_tag("Buscar") %>
+  <% end %>
+</div>
+</br>
+<div class="container">
+  Better Call Saul
+  <%= form_tag("/season", method: "get") do %>
+    <%= label_tag(:season, "Temporadas: ") %>
+    <%= hidden_field_tag :series, "Better Call Saul"%>
+    <%= select_tag(:season, options_for_select(@bcs_seasons)) %>
+    <%= submit_tag("Buscar")%>
+  <% end %>
+</div>
+
+

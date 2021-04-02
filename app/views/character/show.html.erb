@@ -1,0 +1,62 @@
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <figure class="image is-256x256">
+          <img class='is-rounded' src=<%= @character_info["image"] %> alt="Placeholder image">
+      </figure>
+    </div>
+  </div>
+  <div class="card-content">
+        <h3 class="title is-3">Nombre Personaje: <%= @character_info["name"].to_s%></h3><br>
+        <h3 class='title is-3'>Ocupaciones:</h3>
+            <div class="container">
+                <% @character_info["occupation"].each do |ocupation| %>
+                    <div class="field is-grouped">
+                        <li class='subtitle is-5'><%= ocupation %></li>
+                    </div>
+                <% end %>
+            </div>
+        <h3 class="title is-3">Estado: <%= @character_info["status"]%></h3>
+        <h3 class="title is-3">Apodo: <%= @character_info["nickname"]%></h3>
+        <h3 class="title is-3">Actor: <%= @character_info["portrayed"]%></h3>
+        <h3 class="title is-3">Series en las que aparece el personaje: <%= @character_info["category"]%></h3>
+    <div class="content">
+    <h3 class='title is-3'>Apariciones Breaking Bad:</h3>
+        <div class="container">
+            <% @character_info["appearance"].each do |season| %>
+            <div class="field is-grouped">
+              <%= link_to "#{season}", "/season?season=#{season}&series=Breaking+Bad", class: 'subtitle is-5'%>
+            </div>
+            <% end %>
+        </div>
+    </div>
+    <%if @character_info["better_call_saul_appearance"].any?%>
+        <div class="content">
+        <h3 class='title is-3'>Apariciones Better Call Saul:</h3>
+            <div class="container">
+                <% @character_info["better_call_saul_appearance"].each do |season| %>
+                <div class="field is-grouped">
+                    <%= link_to "#{season}", "/season?season=#{season}&series=Better+Call+Saul", class: 'subtitle is-5'%>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    <%end%>
+    <h3 class='title is-3'>Frases del personaje</h3>
+    <div class= table-container>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr style="color:white;">
+                    <th>Frase</th>
+                    <th>Serie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @parsed_quotes.each do |quote| %>
+                    <tr><td><%= quote["quote"]%></td><td><%= quote["series"]%></td></tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>

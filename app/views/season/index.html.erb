@@ -1,0 +1,14 @@
+  <div class="container">
+    <table class="table table-bordered table-hover table-striped text-center">
+      <thead class="thead-dark">
+        <tr style="color:white;">
+          <th>Título Episodio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @parsed_season_episodes.each do |episode| %>
+          <tr><td><%= link_to "#{episode["title"]}", "/episode?episode_id=#{episode["episode_id"]}", class: 'subtitle is-5'%></td></tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
