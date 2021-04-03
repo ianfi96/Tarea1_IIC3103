@@ -1,0 +1,14 @@
+    <div class= "table-container">
+        <table class="table is-fullwidth">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @list_of_characters.each do |ch| %>
+                    <tr><td><%= link_to "#{ch["name"]}", "/character?character_name=#{ch["name"]}", class: "subtitle is-5"%></td></tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>

@@ -8,9 +8,39 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <%= link_to "Tarea 1", root_path, class:"title is-1 has-text-info"%>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <%= form_tag("/character/search", method: "get") do %>
+          <div class="field has-addons">
+            <div class="control">
+              <%= search_field_tag(:search, "Buscar",class: "input is-info is-large") %>
+            </div>
+            <div>
+              <%= submit_tag("Buscar", class: "button is-info is-large") %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </nav>       
+  <div class="container is-fullhd">
+    <div class="columns">
+      <div class="column"></div>
+        <div class="column is-three-quarters"> 
+          <%= yield %>
+        </div>
+      <div class="column"></div>
+    </div>
+  </div>
+</body>
 </html>
