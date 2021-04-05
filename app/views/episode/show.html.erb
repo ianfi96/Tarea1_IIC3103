@@ -4,13 +4,13 @@
         <h3 class="title is-3">Título Episodio: <%= @final_episode["title"]%></h3>
         <h3 class="title is-3">Número de episodio: <%= @final_episode["episode"]%></h3>
         <h3 class="title is-3">Temporada: <%= @final_episode["season"]%></h3>
-        <h3 class="title is-3">Fecha de emisión <%= @final_episode["air_date"]%></h3>
+        <h3 class="title is-3">Fecha de emisión: <%= DateTime.parse(@final_episode["air_date"]).to_date.to_s%></h3>
     <div class="content">
     <h3 class='title is-3'>Personajes:</h3>
         <div class="container">
             <% @final_episode["characters"].each do |personaje| %>
             <div class="field is-grouped">
-              <%= link_to "#{personaje}", "/character?character_name=#{personaje}", class: 'subtitle is-5'%>
+              <li><%= link_to "#{personaje}", "/character?character_name=#{personaje}", class: 'subtitle is-5'%></li>
             </div>
             <% end %>
         </div>

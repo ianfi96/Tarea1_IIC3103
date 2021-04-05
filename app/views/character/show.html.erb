@@ -13,20 +13,21 @@
                 <div class="container">
                     <% @character_info["occupation"].each do |ocupation| %>
                         <div class="field is-grouped">
-                            <li class='subtitle is-5'><%= ocupation %></li>
+                            <li class='subtitle is-4'><%= ocupation %></li>
                         </div>
                     <% end %>
                 </div>
+            <br>
             <h3 class="title is-3">Estado: <%= @character_info["status"]%></h3>
             <h3 class="title is-3">Apodo: <%= @character_info["nickname"]%></h3>
-            <h3 class="title is-3">Actor: <%= @character_info["portrayed"]%></h3>
+            <h3 class="title is-3">Actor/Actriz: <%= @character_info["portrayed"]%></h3>
             <h3 class="title is-3">Series en las que aparece el personaje: <%= @character_info["category"]%></h3>
         <div class="content">
         <h3 class='title is-3'>Apariciones Breaking Bad:</h3>
             <div class="container">
                 <% @character_info["appearance"].each do |season| %>
                 <div class="field is-grouped">
-                <%= link_to "#{season}", "/season?season=#{season}&series=Breaking+Bad", class: 'subtitle is-5'%>
+                    <li><%= link_to "#{season}", "/season?season=#{season}&series=Breaking+Bad", class: 'subtitle is-4'%></li>
                 </div>
                 <% end %>
             </div>
@@ -37,7 +38,7 @@
                 <div class="container">
                     <% @character_info["better_call_saul_appearance"].each do |season| %>
                     <div class="field is-grouped">
-                        <%= link_to "#{season}", "/season?season=#{season}&series=Better+Call+Saul", class: 'subtitle is-5'%>
+                        <li><%= link_to "#{season}", "/season?season=#{season}&series=Better+Call+Saul", class: 'subtitle is-5'%></li>
                     </div>
                     <% end %>
                 </div>
