@@ -1,3 +1,4 @@
+<%if @final_episode.nil? == false%> 
  <div class="card">
   <div class="card-content">
         <h3 class="title is-3">Serie: <%= @final_episode["series"].to_s%></h3>
@@ -17,3 +18,8 @@
     </div>
   </div>
 </div>
+<% else %>
+<div class="box">
+  <h3 class="title is-3">Episodio no válido, por favor busque de nuevo</h3>
+</div>
+<%end%>

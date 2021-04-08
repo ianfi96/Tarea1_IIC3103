@@ -1,3 +1,4 @@
+<% if @list_of_characters.empty? == false%>
     <div class= "table-container">
         <table class="table is-fullwidth">
             <thead>
@@ -12,3 +13,8 @@
             </tbody>
         </table>
     </div>
+<% else %>
+    <div class="box">
+        <h3 class="title is-3">No hay personajes con ese nombre, busque un nombre válido</h3>
+    </div>
+<% end %>

@@ -9,7 +9,7 @@
       <br>
       <div class="columns is-mobile is-centered">
         <%= form_tag("/season", method: "get") do %>
-          <%= label_tag(:season, "Temporadas: ", class: "title is-5") %>
+          <%= label_tag(:season, "Temporada: ", class: "title is-5") %>
           <%= hidden_field_tag :series, "Breaking Bad"%>
           <div class="select is-medium">
             <%= select_tag(:season, options_for_select(@bb_seasons)) %>
@@ -28,7 +28,7 @@
       <br>
       <div class="columns is-mobile is-centered">
         <%= form_tag("/season", method: "get") do %>
-        <%= label_tag(:season, "Temporadas: ", class: "title is-5") %>
+        <%= label_tag(:season, "Temporada: ", class: "title is-5") %>
         <%= hidden_field_tag :series, "Better Call Saul"%>
         <div class="select is-medium">
           <%= select_tag(:season, options_for_select(@bcs_seasons)) %>

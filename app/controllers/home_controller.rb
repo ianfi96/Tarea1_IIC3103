@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+
   def index
 
     bcs_episodes = HTTP.get("https://tarea-1-breaking-bad.herokuapp.com/api/episodes?series=Better+Call+Saul").to_s
@@ -16,5 +17,7 @@ class HomeController < ApplicationController
       @bb_seasons.append([episode["season"]])
     end
     @bb_seasons = @bb_seasons.uniq
+
+    raise ActionController::RoutingError.new('Not Found') if (@bcs_seasons.blank? || @bb_seasons.blank?)
   end
 end

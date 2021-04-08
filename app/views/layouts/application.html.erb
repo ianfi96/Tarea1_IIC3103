@@ -23,7 +23,7 @@
           <%= form_tag("/character/search", method: "get") do %>
           <div class="field has-addons">
             <div class="control">
-              <%= search_field_tag(:search, "Buscar",class: "input is-info is-large") %>
+              <%= search_field_tag(:search, "Buscar",class: "input is-info is-large", required: true) %>
             </div>
             <div>
               <%= submit_tag("Buscar", class: "button is-info is-large") %>
