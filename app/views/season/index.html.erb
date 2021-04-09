@@ -1,3 +1,4 @@
+<% if @parsed_season_episodes.any?%>
   <div class="box">
     <div class="table-container">
         <table class="table is-fullwidth">
@@ -13,3 +14,8 @@
         </table>
     </div>
   </div>
+<% else %>
+  <div class="box">
+    <h3 class="title is-3">Temporada no válida, por favor trate de nuevo</h3>
+  </div>
+<%end%>
