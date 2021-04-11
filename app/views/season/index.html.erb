@@ -3,7 +3,7 @@
     <div class="table-container">
         <table class="table is-fullwidth">
             <tr>
-            <th class="title is-3">Título Episodio</th>
+            <th class="title is-3">Episodios Temporada <%=@season%></th>
             </tr>
         </thead>
         <tbody>
@@ -16,6 +16,6 @@
   </div>
 <% else %>
   <div class="box">
-    <h3 class="title is-3">Temporada no válida, por favor trate de nuevo</h3>
+    <h3 class="title is-3">No hay información disponible para la temporada <%=@season%>, por favor trate de nuevo</h3>
   </div>
 <%end%>
